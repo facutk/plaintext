@@ -1,0 +1,31 @@
+{
+  "name": "plaintext",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:facutk/plaintext.git"
+  },
+  "dependencies": {
+    "bull": "^3.22.0",
+    "bull-board": "^1.5.1",
+    "express": "^4.17.1",
+    "html-to-text": "^7.0.0",
+    "puppeteer": "^8.0.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}

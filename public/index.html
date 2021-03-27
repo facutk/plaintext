@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>plaintext | turn any website to plaintext</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://www.herokucdn.com/purple3/latest/purple3.min.css">
+  <script src="./index.js" async></script>
+</head>
+<body class="bg-near-white">
+  <script type="text/template" id="job-template">
+    <div class="flex flex-column ma2">
+      <div class="flex justify-between mb2">
+        <div class='mt2 mb1'><span class="hk-label">Job ID:</span> {{id}}</div>
+        <div class='mt2 mb1'><span class="hk-label">State:</span> {{state}}</div>
+      </div>
+      <div class="w-100 br1 shadow-inner-1 bg-light-silver">
+        <span class="db h1 br1 {{color}}" style="width: {{progress}}%;"></span>
+      </div>
+      <div class="w-100 br1 shadow-inner-1 bg-light-silver">
+        <code class="pre">{{asText}}</code>
+      </div>
+    </div>
+  </script>
+  <div class="main-content flex flex-column justify-center items-center w-100 mt4">
+    <div class='br2 flex flex-column items-center pv3 mb4'>
+      <div class='f1 mt2 mb1'>Websites to plaintext</div>
+      <div class='flex mt2'>
+        <a href='#' id="add-job" class='f2 link purple ph2 pv1 ba b--purple br1 mr4'>Get site as plaintext</a>
+        <input class="hk-input mr4" id="url-to-text" placeholder="https://" value="https://github.com/facutk/plaintext/blob/main/README.md" />
+        <a href='/job/queues' id="clear" class='f2 link purple ph2 pv1 ba b--purple br1 mr4'>Bull Dashboard</a>
+      </div>
+    </div>
+    <div id="job-summary" class="w-80 f3"></div>
+    <div class="h6 flex flex-column justify-end mt6">
+      
+      <div class="shadow-3 pa4 f3">
+        <code class="pre">
+# queue url
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"url": "https://github.com/facutk/plaintext/blob/main/README.md"}' \
+  http://localhost:5000/job
+
+# get job progress
+curl http://localhost:5000/job/[uuid]/poll
+
+# get job results
+curl http://localhost:5000/job/[uuid]
+        </code>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
