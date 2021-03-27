@@ -41,13 +41,13 @@
 curl -X POST \
   -H "Content-Type: application/json" \
   -d '{"url": "https://github.com/facutk/plaintext/blob/main/README.md"}' \
-  http://localhost:5000/job
+  https://plaintext.facu.tk/job
 
 # get job progress
-curl http://localhost:5000/job/[uuid]/poll
+curl https://plaintext.facu.tk/job/[uuid]/poll
 
 # get job results
-curl http://localhost:5000/job/[uuid]
+curl https://plaintext.facu.tk/job/[uuid]
         </code>
       </div>
     </div>
