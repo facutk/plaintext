@@ -1,6 +1,8 @@
 # plaintext
 
-turn any website to plaintext
+https://plaintext.facu.tk/
+
+Turn any website to plaintext
 
 ## Install
 ```
@@ -16,15 +18,21 @@ npm run dev
 curl -X POST \
   -H "Content-Type: application/json" \
   -d '{"url": "https://github.com/facutk/plaintext/blob/main/README.md"}' \
-  http://localhost:5000/job
+  https://plaintext.facu.tk/job
 
 # get job progress
-curl http://localhost:5000/job/[uuid]/poll
+curl https://plaintext.facu.tk/job/[uuid]/poll
 
 # get job results
-curl http://localhost:5000/job/[uuid]
+curl https://plaintext.facu.tk/job/[uuid]
 ```
 
 ## UI
   - Dummy UI: http://localhost:5000/
   - Bull Dashboard: http://localhost:5000/job/queues/
+
+### Heroku Dependencies
+  - Redis Addon
+  - Buildpacks:
+    - heroku/nodejs
+    - https://github.com/jontewks/puppeteer-heroku-buildpack.git
