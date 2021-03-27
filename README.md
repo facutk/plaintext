@@ -4,6 +4,8 @@ https://plaintext.facu.tk/
 
 Turn any website to plaintext
 
+![Demo](https://raw.githubusercontent.com/facutk/plaintext/main/demo.gif)
+
 ## Install
 ```
 git clone git@github.com:facutk/bull_demo.git
