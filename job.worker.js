@@ -8,7 +8,7 @@ const onJobAdd = async (jobOptions) => {
   const job = await workQueue.add(jobOptions, {
     jobId: uuidv4(),
     removeOnComplete: false,
-    attempts: 1,
+    attempts: 3,
     removeOnFail: true
   });
 
